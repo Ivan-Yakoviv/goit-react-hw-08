@@ -1,4 +1,9 @@
+import clsx from "clsx";
 import s from "./NotFound.module.css";
+
+// const buildLinkClass = ({ isActive }) => {
+//   return clsx(s.link, isActive && s.active);
+// };
 
 const NotFound = () => {
   return (
