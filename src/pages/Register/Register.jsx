@@ -12,7 +12,6 @@ const Register = () => {
     password: "",
   };
   const handleSubmit = (values, options) => {
-    console.log(values);
     dispatch(registerThunk(values));
     options.resetForm();
   };
