@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className={s.header}>
       <h2>Auth</h2>
-      <h3>{user.name}</h3>
+      <h3>{user.email}</h3>
       <ul className={s.list}>
         <li>
           <NavLink to="/">Home</NavLink>
