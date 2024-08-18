@@ -21,7 +21,8 @@ const Login = () => {
     return <Navigate to="/" />;
   }
   return (
-    <div>
+    <div className={s.login}>
+      <h1>Entrance</h1>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={s.contactForm}>
           <Field

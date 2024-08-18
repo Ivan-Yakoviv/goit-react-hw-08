@@ -24,3 +24,9 @@
 .link:hover {
   color: green;
 }
+
+.register {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
