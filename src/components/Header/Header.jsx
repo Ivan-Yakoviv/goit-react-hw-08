@@ -18,7 +18,7 @@ const Header = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/tasks">Tasks</NavLink>
+          <NavLink to="/contacts">Contacts</NavLink>
         </li>
         {!isLoggedIn && (
           <>
