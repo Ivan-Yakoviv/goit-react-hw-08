@@ -10,7 +10,7 @@ import s from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
+  // const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const ContactsPage = () => {
       <SearchBox />
       <ContactList />
       {loading && <Loader />}
-      {error && <h2>Something went wrong!</h2>}
+      {/* {error && <h2>Something went wrong!</h2>} */}
     </div>
   );
 };
