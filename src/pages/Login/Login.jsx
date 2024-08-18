@@ -1,6 +1,8 @@
-import { Field, Formik } from "formik";
+import { Form, Field, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { Form, Link, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { loginThunk } from "../../redux/auth/operations";
 
 const Login = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -29,7 +31,7 @@ const Login = () => {
           />
           <button type="submit">Login</button>
           <p>
-            You don't have account?<Link to="/register">Sign up!</Link>
+            You do not have account?<Link to="/register">Sign up!</Link>
           </p>
         </Form>
       </Formik>

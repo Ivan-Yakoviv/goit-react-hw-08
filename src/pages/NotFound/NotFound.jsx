@@ -7,7 +7,7 @@ import s from "./NotFound.module.css";
 
 const NotFound = () => {
   return (
-    <div className="s.room">
+    <div className={s.room}>
       <div className="s.cuboid">
         <div className="s.side"></div>
         <div className="s.side"></div>

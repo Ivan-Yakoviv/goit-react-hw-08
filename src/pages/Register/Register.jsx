@@ -1,5 +1,5 @@
-import { Field, Formik } from "formik";
-import { Form, Link } from "react-router-dom";
+import { Form, Field, Formik } from "formik";
+import { Link } from "react-router-dom";
 import { registerThunk } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 
