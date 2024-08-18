@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { loginThunk } from "../../redux/auth/operations";
+import s from "./Login.module.css";
 
 const Login = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -22,16 +23,25 @@ const Login = () => {
   return (
     <div>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <Field name="email" placeholder="Enter your email" />
+        <Form className={s.contactForm}>
           <Field
+            className={s.input}
+            name="email"
+            placeholder="Enter your email"
+          />
+          <Field
+            className={s.input}
             name="password"
             type="password"
             placeholder="Enter your password"
           />
           <button type="submit">Login</button>
           <p>
-            You do not have account?<Link to="/register">Sign up!</Link>
+            You do not have account?
+            <Link className={s.link} to="/register">
+              {" "}
+              Sign up!
+            </Link>
           </p>
         </Form>
       </Formik>
