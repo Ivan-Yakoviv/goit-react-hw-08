@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className={s.header}>
-      <h2>Auth</h2>
+      <h2>Phonebook</h2>
       <h3>{user.email}</h3>
       <ul className={s.list}>
         <li>
