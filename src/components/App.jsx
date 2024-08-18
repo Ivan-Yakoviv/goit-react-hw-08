@@ -10,12 +10,15 @@ import "./App.css";
 // import Loader from "./Loader/Loader";
 import { Route, Routes } from "react-router-dom";
 import ContactsPage from "../pages/ContactsPage/ContactsPage";
+import Layout from "./Layout";
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<ContactsPage />}></Route>
+        <Route path="/" element={<Layout />}>
+          <Route path="contacts" element={<ContactsPage />} />
+        </Route>
       </Routes>
     </>
   );
