@@ -23,4 +23,9 @@
     background-color: transparent;
     border: none;
   }
+
+  .btnLogout:focus,
+  .btnLogout:focus-visible {
+    outline: none;
+  }
 }
