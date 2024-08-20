@@ -11,6 +11,7 @@ import { PrivateRoute } from "../Routes/PrivateRoute";
 import { PublicRoute } from "../Routes/PublicRoute";
 import { selectIsRefreshing } from "../redux/auth/selectors";
 import Loader from "./Loader/Loader";
+import NotFound from "../pages/NotFound/NotFound";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -50,7 +51,7 @@ const App = () => {
             </PublicRoute>
           }
         />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
