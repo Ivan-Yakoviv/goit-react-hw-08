@@ -4,8 +4,15 @@ import Layout from "./Layout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getMeThunk } from "../redux/auth/operations";
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMeThunk());
+  }, [dispatch]);
   return (
     <>
       <Routes>

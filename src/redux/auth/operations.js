@@ -29,3 +29,24 @@ export const logoutThunk = createAsyncThunk('logout', async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+export const getMeThunk = createAsyncThunk('getMe', async (_, thunkAPI) => {
+  // Перевірити токен, чи є він в локал сторейдж
+  const savedToken = thunkAPI.getState().auth.token;
+  // Якщо токена нема - зупинити операцію
+  if (savedToken === null) {
+    return thunkAPI.rejectWithValue('Token is not exist!');
+  }
+  console.log(savedToken);
+  // Якщо є - продовжуємо
+  try {
+    // Встановлюємо токен в хедери
+    setToken(savedToken);
+    // Робимо запит до сервера
+    const { data } = await goitApi.get('users/me');
+    // Віддаємо відповідь
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
