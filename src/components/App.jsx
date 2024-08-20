@@ -4,25 +4,29 @@ import Layout from "./Layout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getMeThunk } from "../redux/auth/operations";
 import { PrivateRoute } from "../Routes/PrivateRoute";
 import { PublicRoute } from "../Routes/PublicRoute";
+import { selectIsRefreshing } from "../redux/auth/selectors";
+import Loader from "./Loader/Loader";
 
 const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
   useEffect(() => {
     dispatch(getMeThunk());
   }, [dispatch]);
-  return (
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-
           <Route
-            path="/contacts"
+            path="contacts"
             element={
               <PrivateRoute>
                 <ContactsPage />
@@ -31,7 +35,7 @@ const App = () => {
           />
         </Route>
         <Route
-          path="/login"
+          path="login"
           element={
             <PublicRoute>
               <Login />
@@ -39,7 +43,7 @@ const App = () => {
           }
         />
         <Route
-          path="/register"
+          path="register"
           element={
             <PublicRoute>
               <Register />
