@@ -33,7 +33,12 @@ const Header = () => {
         )}
         {isLoggedIn && (
           <li>
-            <button className={s.btnLogout} onClick={() => dispatch(logoutThunk())}>Logout</button>
+            <button
+              className={s.btnLogout}
+              onClick={() => dispatch(logoutThunk())}
+            >
+              Logout
+            </button>
           </li>
         )}
       </ul>

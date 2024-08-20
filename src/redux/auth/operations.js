@@ -37,7 +37,6 @@ export const getMeThunk = createAsyncThunk('getMe', async (_, thunkAPI) => {
   if (savedToken === null) {
     return thunkAPI.rejectWithValue('Token is not exist!');
   }
-  console.log(savedToken);
   // Якщо є - продовжуємо
   try {
     // Встановлюємо токен в хедери
