@@ -22,8 +22,8 @@ const slice = createSlice({
             state.items = action.payload;
             })
             .addCase(logoutThunk.fulfilled, () => {
-        return initialState;
-      })
+            return initialState;
+            })
             .addCase(fetchContacts.rejected, (state, action) => {
             state.loading = false;
             state.error = action.payload;
