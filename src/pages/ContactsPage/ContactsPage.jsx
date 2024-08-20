@@ -3,7 +3,7 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import ContactList from "../../components/ContactList/ContactList";
 import Loader from "../../components/Loader/Loader";
-import { selectError, selectLoading } from "../../redux/contacts/selectors";
+import { selectLoading } from "../../redux/contacts/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "../../redux/contacts/operations";
 import s from "./ContactsPage.module.css";
