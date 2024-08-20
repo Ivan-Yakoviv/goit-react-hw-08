@@ -43,7 +43,7 @@ export const getMeThunk = createAsyncThunk('getMe', async (_, thunkAPI) => {
     // Встановлюємо токен в хедери
     setToken(savedToken);
     // Робимо запит до сервера
-    const { data } = await goitApi.get('users/me');
+    const { data } = await goitApi.get('users/current');
     // Віддаємо відповідь
     return data;
   } catch (error) {

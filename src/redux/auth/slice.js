@@ -25,14 +25,15 @@ const slice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-       .addCase(getMeThunk.fulfilled, (state, action) => {
+       
+      .addCase(logoutThunk.fulfilled, () => {
+        return initialState;
+      })
+      .addCase(getMeThunk.fulfilled, (state, action) => {
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
-      })
-      .addCase(logoutThunk.fulfilled, () => {
-        return initialState;
       });
   },
 });
