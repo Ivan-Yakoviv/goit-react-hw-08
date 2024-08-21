@@ -15,9 +15,10 @@ const AppBar = () => {
 
   return (
     <header className={s.header}>
-      <h2>Phonebook</h2>
-      <h3>{user.email}</h3>
+      {/* <h2>Phonebook</h2> */}
+
       <Navigation />
+      <h3>{user.email}</h3>
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
       {/* <ul className={s.list}>
         <li>
